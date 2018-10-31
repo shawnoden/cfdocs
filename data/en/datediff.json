@@ -33,7 +33,7 @@
 		{
 			"title": "`w` vs `ww` In CF2018+ and below CF2016/Lucee",
 			"description": "Note the different behavior between CF 2018 and below CF2016 and Lucee.",
-			"code": "date1 = CreateDate(2018,10,21) ; date2 = CreateDate(2018,10,31) ; writeOutput( dateDiff( "w", date1, date2 ) ) ; writeoutput(" "); writeOutput( dateDiff( "ww", date1, date2 ) ) ;",
+			"code": "date1 = CreateDate(2018,10,21) ; date2 = CreateDate(2018,10,31) ; writeOutput( dateDiff( \"w\", date1, date2 ) ) ; writeoutput(\" \"); writeOutput( dateDiff( \"ww\", date1, date2 ) ) ;",
 			"result":"ACF 2018: 8 1, ACF2016/Lucee: 1 1",
 			"runnable":true
 		},
