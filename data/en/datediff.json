@@ -4,15 +4,15 @@
 	"syntax":"dateDiff(datepart, date1, date2)",
 	"member":"date2.diff(datepart, date1)",
 	"returns":"numeric",
-	"related":["dateadd","dateformat"],
-	"description":"Determines the integer number of datepart units by which date1 is less than date2.",
+	"related":["dateadd","dateformat","datepart","createtimespan"],
+	"description":"Determines the integer difference between two dates. If `date2` is less than `date1`, it will return a negative number. \r Enclose string constant dates in quotation marks, or it will be interpreted as a date/time object, resulting in an incorrect value.",
 	"params": [
-		{"name":"datepart","description":"yyyy: Year\n q: Quarter\n m: Month\n y: Day of year\n d: Day\n w: Week\n ww: Week\n h: Hour\n n: Minute\n s: Second\n","required":true,"default":"","type":"string","values":["yyyy","q","m","y","d","w","ww","h","n","s"]},
-		{"name":"date1","description":"The smaller date to diff\nCan be either a string or a date object whereas member function only accept the latter","required":true,"default":"","type":"date","values":[]},
-		{"name":"date2","description":"The bigger date to diff\nCan be either a string or a date object whereas member function only accept the latter","required":true,"default":"","type":"date","values":[]}
+		{"name":"datepart","description":"String that specifies the units in which to count. \r `yyyy`: Year \n `q`: Quarter\n `m`: Months\n `y`: Day of year (same as `d`)\n `d`: Day\n `w`: Weekdays (CF2018+, otherwise same as `ww` in CF2016 or less and Lucee)\n `ww`: Week\n `h`: Hour\n `n`: Minute\n `s`: Second\n **Note:** The mask `w` as weekdays is only valid for the 2018 release of ColdFusion. For 2016 and earlier versions of ColdFusion, `w` returns the number of weeks and is the same as `ww`.","required":true,"default":"","type":"string","values":["yyyy","q","m","y","d","w","ww","h","n","s"]},
+		{"name":"date1","description":"The first date (100AD-9999AD) to diff.\nCan be either a string or a date object, whereas the member function only accepts the latter.","required":true,"default":"","type":"date","values":[]},
+		{"name":"date2","description":"The second date (100AD-9999AD) to diff.\nCan be either a string or a date object. \n The member function does not accept this parameter.","required":true,"default":"","type":"date","values":[]}
 	],
 	"engines": {
-		"coldfusion": {"minimum_version":"", "notes":"Member function is available in CF11+.", "docs":"https://helpx.adobe.com/coldfusion/cfml-reference/coldfusion-functions/functions-c-d/DateDiff.html"},
+		"coldfusion": {"minimum_version":"", "notes":"Member function is available in CF11+. Datepart `w` behaves different in CF2018+.", "docs":"https://helpx.adobe.com/coldfusion/cfml-reference/coldfusion-functions/functions-c-d/DateDiff.html"},
 		"lucee": {"minimum_version":"", "notes":"Member function is available in Lucee4.5+. The Lucee member function diffs dates in the opposite direction (+/-) than the Adobe CF member function. See the example below.", "docs":"http://docs.lucee.org/reference/functions/datediff.html"},
 		"railo": {"minimum_version":"", "notes":"", "docs":"http://railodocs.org/index.cfm/function/datediff"},
 		"openbd": {"minimum_version":"", "notes":"", "docs":"http://openbd.org/manual/?/function/datediff"}
@@ -22,18 +22,27 @@
 		{
 			"title": "dateDiff Example",
 			"description": "Find the difference between two dates.",
-			"code": "dateDiff(\"d\", \"2013-01-15\", \"2013-01-25\")",
+			"code": "dateDiff(\"d\", \"2018-01-15\", \"2018-01-25\")",
 			"result": "10"
 		},
 		{
 			"title": "How old are they?",
-			"description": "Calculates a persons age based on a variable birthDate which contains a date. Uses the now function to get current date.",
+			"description": "Calculates a person's age based on a variable birthDate which contains a date. Uses the now function to get current date.",
 			"code": "dateDiff(\"yyyy\", birthDate, now())"
+		},
+		{
+			"title": "`w` vs `ww` In CF2018+ and below CF2016/Lucee",
+			"description": "Note the different behavior between CF 2018 and below CF2016 and Lucee.",
+			"code": "date1 = CreateDate(2018,10,21) ; date2 = CreateDate(2018,10,31) ; writeOutput( dateDiff( "w", date1, date2 ) ) ; writeoutput(" "); writeOutput( dateDiff( "ww", date1, date2 ) ) ;",
+			"result":"ACF 2018: 8 1, ACF2016/Lucee: 1 1",
+			"runnable":true
 		},
 		{
 			"title": "dateDiff member function",
 			"description": "Note the different behavior between ColdFusion and Lucee.",
-			"code": "testDate = now();\ndiffDate = dateAdd('d', 1, testDate);\nwriteOutput(testDate.diff('d', diffDate)); // this returns 1 on Lucee, and -1 on ColdFusion"
+			"code": "date1 = CreateDate(2018,10,21) ; date2 = CreateDate(2018,10,31) ; writeoutput( date2.diff(\"d\",date1) ) ;",
+			"result":"10 on ACF and -10 on Lucee",
+			"runnable":true
 		}
 	]
 }
