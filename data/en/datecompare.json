@@ -29,6 +29,12 @@
 			"description": "Returns 1 because date1 is greater than date 2",
 			"code": "dateCompare('12/30/2015', '12/02/2015', 'd')",
 			"result": "1"
+		},
+		{
+			"title": "Compare Two Dates by Default (Seconds)",
+			"description": "Returns -1 because date1 is earlier than date 2",
+			"code": "dateCompare('12/30/2015 00:00:00', '12/30/2015 00:00:01')",
+			"result": "-1"
 		}
 	]
 }
