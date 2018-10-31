@@ -56,7 +56,7 @@
 			"description":"Here we're adding 8 weeks to August 3rd, 2018.", 
 			"code":"dateAdd('ww', 8, '8/3/2018')", 
 			"result":"{ts '2018-09-28 00:00:00'}"
-		,
+		},
 		{
 			"title":"Using Member Function", 
 			"description":"Use member function to add 30 days to August 3rd, 2018.", 
