@@ -7,7 +7,7 @@
 	"related":["datePart", "dayOfWeek", "dayOfWeekAsString", "dayOfYear", "daysInMonth", "daysInYear", "firstDayOfMonth"],
 	"description":" Determines the day of the month, in a date.\n The ordinal for the day of the month, ranging from 1 to 31.",
 	"params": [
-		{"name":"date","description":"Date or date/time object.","required":true,"default":"","type":"date","values":[]}
+		{"name":"date","description":"Date or date/time object (100AD-9999AD).\rWhen passing a date/time object as a string, enclose it in quotation marks. Otherwise, it is interpreted as a numeric representation of a date/time object.","required":true,"default":"","type":"date","values":[]}
 
 	],
 	"engines": {
@@ -22,10 +22,16 @@
 	"examples": [
 		{
 			"title": "Determines the day of the month",
-			"description": "Uses the day function to determine the day of the month",
+			"description": "Uses the day function to determine the day of the month.",
 			"code": "<cfset Date = CreateDate(2010, 09, 08)>\r\n<cfset result = day(Date)>\r\n<cfoutput>#result#</cfoutput>",
 			"result": "8"
+		}, 
+		{
+			"title": "Member Function Example",
+			"description": "This uses the member function to determine the date.",
+			"code": "t=CreateDate(2018,9,8); writeOutput(t.day());",
+			"result": "8",
+			"runnable": true
 		}
 	]
-
 }
