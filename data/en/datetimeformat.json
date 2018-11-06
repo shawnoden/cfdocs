@@ -1,14 +1,14 @@
 {
 	"name":"dateTimeFormat",
 	"type":"function",
-	"syntax":"dateTimeFormat(date [, mask] [, timezone])",
-	"member":"datetime.dateTimeFormat([mask] [, timezone])",
+	"syntax":"dateTimeFormat(date [, mask [, timezone]])",
+	"member":"datetime.dateTimeFormat([mask [, timezone]])",
 	"returns":"string",
 	"related":["LSDateTimeFormat","dateFormat","timeFormat","datetime"],
-	"description":"Formats date and time values using a given output format. For international date support, use `LSDateTimeFormat`.",
+	"description":"Formats date and time values using a given output format. For international date support, use `LSDateTimeFormat`.\n**NOTE**: In CF2018, the member function can be shortened to just `date.format()`.",
 
 	"params": [
-		{"name":"date","description":"The date/time object (100AD-9999AD)","required":true,"default":"","type":"date","values":[]},
+		{"name":"date","description":"The date/time object (100AD-9999AD).\n NOTE: This parameter named `datetime` in Lucee.","required":true,"default":"","type":"date","values":[]},
 		{"name":"mask","description":"The mask used to format the datetime.\n\n
 	\t- d: Day of the month as digits; no leading zero for single-digit days.\n
 	\t- dd: Day of the month as digits; leading zero for single-digit days.\n
