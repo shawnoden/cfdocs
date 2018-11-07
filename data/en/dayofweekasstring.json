@@ -1,12 +1,12 @@
 {
 	"name":"dayOfWeekAsString",
 	"type":"function",
-	"syntax":"dayOfWeekAsString(day_of_week [, locale])",
+	"syntax":"dayOfWeekAsString(dayOfWeek [, locale])",
 	"returns":"string",
 	"related":["dayOfWeekShortAsString"],
 	"description":" Determines the string name of the day of the week from 1-7",
 	"params": [
-		{"name":"day_of_week","description":"Only values from 1 to 7 are valid.\nWeek starting with 1 for Sunday and ends with 7 for Saturday:\n\r \t- 1 = Sunday \r \t- 2 = Monday \r \t- 3 = Tuesday \r \t- 4 = Wednesday \r \t- 5 = Thursday \r \t- 6 = Friday \r \t- 7 = Saturday","required":true,"default":"","type":"numeric","values":[1,2,3,4,5,6,7]}
+		{"name":"dayOfWeek","description":"Only values from 1 to 7 are valid.\nWeek starting with 1 for Sunday and ends with 7 for Saturday:\n\r \t- 1 = Sunday \r \t- 2 = Monday \r \t- 3 = Tuesday \r \t- 4 = Wednesday \r \t- 5 = Thursday \r \t- 6 = Friday \r \t- 7 = Saturday","required":true,"default":"","type":"numeric","values":[1,2,3,4,5,6,7]}
 		{"name":"locale","description":"Locale to use instead of the default JVM locale.","required":false,"default":"Default JVM Locale","type":"locale","values":[]}
 	],
 	"engines": {
