@@ -29,8 +29,8 @@
 		{
 			"title": "Member Function Example",
 			"description": "Demonstrate the member function `dayOfYear` to determine the day of the year.",
-			"code": "d=CreateDate(2018,11,7);\r\nresult = d.dayOfYear();\r\nwriteoutput(result);",
-			"result": "311"
+			"code": "d=CreateDate(2018,2,1);\r\nresult = d.dayOfYear();\r\nwriteoutput(result);",
+			"result": "32",
 			"runndable": true
 		}
 	]
