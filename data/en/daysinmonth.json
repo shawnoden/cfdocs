@@ -28,14 +28,14 @@
 		},
 		{
 			"title": "Member Function Example",
-			"description": "Uses the `daysInMoOnth() member function to determine the number of days in a given month.",
+			"description": "Uses the `daysInMonth() member function to determine the number of days in a given month.",
 			"code": "d=createDate(2018,11,8);\rwriteOutput( d.daysInMonth() );",
 			"result": "30",
 			"runnable": true
 		},
 		{
 			"title": "Chainable Member Function Example",
-			"description": "The `daysInMoOnth() member function can be chained to another function.",
+			"description": "The `daysInMonth() member function can be chained to another function.",
 			"code": "writeOutput( createDate(2018,1,1).daysInMonth() );",
 			"result": "31",
 			"runnable": true
