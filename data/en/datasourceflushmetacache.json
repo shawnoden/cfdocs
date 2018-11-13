@@ -4,7 +4,7 @@
 	"syntax": "datasourceFlushMetacache([datasourceName])",
 	"returns": "boolean",
 	"related": [],
-	"description": "Flush the meta data stored for a certain datasource used for stored procedures.\n NOTE: This is only supported for Oracle datasources.",
+	"description": "Flush the metadata stored for a certain datasource used for stored procedures.\n\r `NOTE:` This is only supported for Oracle datasources.",
 	"params": [
 		{"name": "datasourceName", "description": "Name of the datasource to flush. When not defined all caches are flushed.", "required": false, "default": "", "type": "string", "values": []}
 	],

@@ -23,13 +23,13 @@
 		{
 			"title": "Simple example",
 			"description": "Uses the daysInYear function to determine the number of days in a year.",
-			"code": "<cfset result = daysInYear(now())>\r\n<cfoutput>#result#</cfoutput>",
+			"code": "<cfset result = daysInYear(now())>\n\r<cfoutput>#result#</cfoutput>",
 			"result": "365"
 		},
 		{
 			"title": "Simple example with leap year",
 			"description": "Uses the daysInYear function to determine the number of days in a leap year.",
-			"code": "<cfset Date = CreateDate(2012, 02, 03)>\r\n<cfset result = daysInYear(Date)>\r\n<cfoutput>#result#</cfoutput>",
+			"code": "<cfset Date = CreateDate(2012, 02, 03)>\n\r<cfset result = daysInYear(Date)>\n\r<cfoutput>#result#</cfoutput>",
 			"result": "366"
 		}, 
 		{
@@ -49,7 +49,7 @@
 		{
 			"title": "Lucee Example with Timezone Argument",
 			"description": "Use caution when using Lucee's `timezone` argument. Because of the way Lucee impliments `timezone` in date calculations, this attribute may cause unexpected behavior.",
-			"code": "/* Run on Lucee */\r\nd1=createDate(2016,1,1) /* LEAP YEAR */;\rd2=createDate(2016,1,2) /* LEAP YEAR */;\rwriteOutput( d1.daysInYear('CST') & \" | \" & d2.daysInYear('CST') );",
+			"code": "/* Run on Lucee */\n\rd1=createDate(2016,1,1) /* LEAP YEAR */;\rd2=createDate(2016,1,2) /* LEAP YEAR */;\rwriteOutput( d1.daysInYear('CST') & \" | \" & d2.daysInYear('CST') );",
 			"result": "365 | 366"
 		}
 	]
