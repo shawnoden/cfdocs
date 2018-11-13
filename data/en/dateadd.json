@@ -9,7 +9,7 @@
 	"params": [
 		{
 			"name":"datepart",
-			"description":"<ul><li>`yyyy` - Year</li>\n`q` - Quarter\n`m` - Month\n`y` - Day of year\n`d` - Day\n`w` - Week day\n`ww` - Week\n`h` - Hour\n`n` - Minute\n`s` - Second\n`l` - Millisecond</ul>",
+			"description":"`yyyy` - Year\n`q` - Quarter\n`m` - Month\n`y` - Day of year\n`d` - Day\n`w` - Week day\n`ww` - Week\n`h` - Hour\n`n` - Minute\n`s` - Second\n`l` - Millisecond</ul>",
 			"required":true,
 			"default":"",
 			"type":"string",
