@@ -77,6 +77,11 @@
 		    "title":"onServerStart function",
 		    "description":"Explanation of how onServerStart is implemented",
 		    "url":"https://helpx.adobe.com/coldfusion/cfml-reference/application-cfc-reference/onserverstart.html"
+		},
+		{
+		    "title":"JVM flags for cfinclude CF2018u11+",
+		    "description":"[CF2018+] -Dcoldfusion.application.recur_resolve.include=true // cfinclude inside Application.cfc will correctly resolve paths relative from the included file\n",
+		    "url":"https://helpx.adobe.com/coldfusion/kb/coldfusion-2018-update-11.html"
 		}
 	],
 	"examples": [
